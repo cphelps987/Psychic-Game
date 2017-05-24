@@ -5,7 +5,7 @@ var alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n
 var wins = 0;
 var losses = 0;
 var guessLeft = 9;
-//var guessSofar = [];
+var guessSofar = [];
 
 
 // When the user presses a key, it will run the following function...
@@ -18,23 +18,32 @@ var guessLeft = 9;
                     for (var i = 0; i < alpha.length; i++) {
 
                         computerGuess = alpha[Math.floor(Math.random() * alpha.length)];
+                        // console.log ("computer guess " + computerGuess)
                     }
 
                     if ((userGuess === event.key)) {
                     }
+                    // console.log ("users guess " + userGuess)
 
                     if ((userGuess === computerGuess)) {
                         wins++;
                         guessLeft = 9;
+                        // console.log ("guesses left " + guessLeft)
+                        // console.log ("wins " + wins)
 
- //forgot to add in lose statment
+                    //forgot to add in lose statment
 
                     }
                     else {
                         guessLeft--;
                         losses++;
                     }
-                    console.log ("losses " + losses)
+                   // console.log ("losses " + losses)
+
+
+                    // if ((guessLeft > 0 )) {
+                    //  return guessLeft = 9; doesnt work
+
 
 
 //having trouble with getting text into document// figured it out
@@ -53,28 +62,10 @@ var guessLeft = 9;
                     temp = document.getElementById("comp-choice-span");
                     temp.textContent = computerGuess;
 
-
-
 }
 
                     /*
-
-                     <br>
-                     <p>Wins: <span id="wins-span"></span></p>
-
-                     <br>
-                     <p> Losses: <span id="lose-span"></span></p>
-
-
-                     <br>
-                     <p> Guesses Left: <span id="left-span"></span></p>
-
-
-                     <br>
-                     <p> Guesses Used: <span id="used-span"></span></p>
-
-
-                    var html = "<p>Press r, p or s to start playing!</p>" +
+                                     var html = "<p>Press r, p or s to start playing!</p>" +
                                     "<p>Wins: " + wins + "</p>" +
                                     "<p>Losses: " + losses + "</p>" +
                                     "<p>GuessLeft: " + guessLeft + "</p>";
