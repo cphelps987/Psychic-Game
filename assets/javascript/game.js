@@ -18,7 +18,7 @@ var guessSofar = [];
                     for (var i = 0; i < alpha.length; i++) {
 
                         computerGuess = alpha[Math.floor(Math.random() * alpha.length)];
-                        // console.log ("computer guess " + computerGuess)
+                        console.log ("computer guess " + computerGuess)
                     }
 
                     if ((userGuess === event.key)) {
@@ -28,8 +28,8 @@ var guessSofar = [];
                     if ((userGuess === computerGuess)) {
                         wins++;
                         guessLeft = 9;
-                        // console.log ("guesses left " + guessLeft)
-                        // console.log ("wins " + wins)
+                        console.log ("guesses left " + guessLeft)
+                        console.log ("wins " + wins)
 
                     //forgot to add in lose statment
 
@@ -37,8 +37,9 @@ var guessSofar = [];
                     else {
                         guessLeft--;
                         losses++;
+                        console.log ("losses " + losses)
                     }
-                   // console.log ("losses " + losses)
+
 
 
                     // if ((guessLeft > 0 )) {
