@@ -9,7 +9,7 @@ var guessLeft = 9;
 
 
 // When the user presses a key, it will run the following function...
-document.onkeyup = function(event) {
+    document.onkeyup = function(event) {
 
                     var userGuess = event.key;
 
@@ -26,15 +26,18 @@ document.onkeyup = function(event) {
                     if ((userGuess === computerGuess)) {
                         wins++;
                         guessLeft = 9;
-                        //forgot to add in lose statment
+
+ //forgot to add in lose statment
 
                     }
-
                     else {
                         guessLeft--;
-
+                        losses++;
                     }
+                    console.log ("losses " + losses)
 
+
+//having trouble with getting text into document// figured it out
                     var temp = document.getElementById("wins-span");
                     temp.textContent = wins;
 
@@ -50,7 +53,7 @@ document.onkeyup = function(event) {
                     temp = document.getElementById("comp-choice-span");
                     temp.textContent = computerGuess;
 
-//having trouble with getting text into document// figured it out
+
 
 }
 
