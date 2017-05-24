@@ -19,13 +19,18 @@ var newletter = function(){
 
 newletter()
 
-var game = document.onkeyup = function(event) {
+document.onkeyup = function(event) {
 
     var userGuess = event.key;
 
+    // push(event.key);
+    // console.log("user input" + guessSoFar)
+    //having a hard time recording keys pressed by the user
 
-    console.log('users' + userGuess);
-    console.log('comp' + computerGuess)
+
+
+    console.log('users ' + userGuess)
+    console.log('comp ' + computerGuess)
 
     if (userGuess === computerGuess) {
 
@@ -41,11 +46,7 @@ var game = document.onkeyup = function(event) {
     }
 
 
-    if (guessLeft > 0) {
-        game
-
-
-    } else if (guessLeft == 0) {
+    if (guessLeft == 0) {
 
         //Reset Game
         alert('Game Over');
@@ -54,6 +55,26 @@ var game = document.onkeyup = function(event) {
         var guessSoFar = [];
         console.log("losses " + losses)
     }
+
+                    var temp = document.getElementById("wins-span");
+                    temp.textContent = wins;
+
+                    temp = document.getElementById("lose-span");
+                    temp.textContent = losses;
+
+                    temp = document.getElementById("left-span");
+                    temp.textContent = guessLeft;
+
+                    temp = document.getElementById("used-span");
+                    temp.textContent = guessSoFar;
+
+                   // temp = document.getElementById("comp-choice-span");
+                   // temp.textContent = computerGuess;
+
+
+
+
+
 }
 
 
@@ -85,22 +106,9 @@ var game = document.onkeyup = function(event) {
 
 
 // //having trouble with getting text into document// figured it out
-//                     var temp = document.getElementById("wins-span");
-//                     temp.textContent = wins;
-//
-//                     temp = document.getElementById("lose-span");
-//                     temp.textContent = losses;
-//
-//                     temp = document.getElementById("left-span");
-//                     temp.textContent = guessLeft;
-//
-//                     temp = document.getElementById("used-span");
-//                     temp.textContent = userGuess;
-//
-//                     temp = document.getElementById("comp-choice-span");
-//                     temp.textContent = computerGuess;
-//
-// }
+
+
+
 
                     /*
                                      var html = "<p>Press r, p or s to start playing!</p>" +
