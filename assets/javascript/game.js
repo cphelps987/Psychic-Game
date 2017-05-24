@@ -5,65 +5,102 @@ var alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n
 var wins = 0;
 var losses = 0;
 var guessLeft = 9;
-var guessSofar = [];
+var guessSoFar = [];
+var computerGuess = '';
+
+var newletter = function(){
+
+    for (var i = 0; i < alpha.length; i++) {
+
+        computerGuess = alpha[Math.floor(Math.random() * alpha.length)];
+        console.log ("computer guess " + computerGuess)
+    }
+}
+
+newletter()
+
+var game = document.onkeyup = function(event) {
+
+    var userGuess = event.key;
+
+
+    console.log('users' + userGuess);
+    console.log('comp' + computerGuess)
+
+    if (userGuess === computerGuess) {
+
+        wins++
+        guessLeft = 9;
+        newletter()
+        console.log("wins " + wins)
+    } else {
+
+        guessLeft--
+        console.log("guesses left " + guessLeft)
+        //push to guessSoFar
+    }
+
+
+    if (guessLeft > 0) {
+        game
+
+
+    } else if (guessLeft == 0) {
+
+        //Reset Game
+        alert('Game Over');
+        guessLeft = 9;
+        losses++
+        var guessSoFar = [];
+        console.log("losses " + losses)
+    }
+}
 
 
 // When the user presses a key, it will run the following function...
-    document.onkeyup = function(event) {
-
-                    var userGuess = event.key;
-
-                    // document.getElementById("guessUsed").innerHTML = guessUsed;
-
-                    for (var i = 0; i < alpha.length; i++) {
-
-                        computerGuess = alpha[Math.floor(Math.random() * alpha.length)];
-                        console.log ("computer guess " + computerGuess)
-                    }
-
-                    if ((userGuess === event.key)) {
-                    }
-                    // console.log ("users guess " + userGuess)
-
-                    if ((userGuess === computerGuess)) {
-                        wins++;
-                        guessLeft = 9;
-                        console.log ("guesses left " + guessLeft)
-                        console.log ("wins " + wins)
-
-                    //forgot to add in lose statment
-
-                    }
-                    else {
-                        guessLeft--;
-                        losses++;
-                        console.log ("losses " + losses)
-                    }
+//     document.onkeyup = function(event) {
+//
+//
+//
+//                     // document.getElementById("guessUsed").innerHTML = guessUsed;
+//
+//
+//                     if ((userGuess === event.key)) {
+//                     }
+//                     // console.log ("users guess " + userGuess)
+//
+//                     if ((userGuess === computerGuess)) {
+//                         wins++;
+//                         guessLeft = 9;
+//                         console.log ("guesses left " + guessLeft)
+//                         console.log ("wins " + wins)
+//
+//                     //forgot to add in lose statment
+//
+//                     }
+//                     else {
+//                         guessLeft--;
+//                         console.log ("losses " + losses)
+//                     }
 
 
-
-                    // if ((guessLeft > 0 )) {
-                    //  return guessLeft = 9; doesnt work
-
-
-
-//having trouble with getting text into document// figured it out
-                    var temp = document.getElementById("wins-span");
-                    temp.textContent = wins;
-
-                    temp = document.getElementById("lose-span");
-                    temp.textContent = losses;
-
-                    temp = document.getElementById("left-span");
-                    temp.textContent = guessLeft;
-
-                    temp = document.getElementById("used-span");
-                    temp.textContent = userGuess;
-
-                    temp = document.getElementById("comp-choice-span");
-                    temp.textContent = computerGuess;
-
-}
+// //having trouble with getting text into document// figured it out
+//                     var temp = document.getElementById("wins-span");
+//                     temp.textContent = wins;
+//
+//                     temp = document.getElementById("lose-span");
+//                     temp.textContent = losses;
+//
+//                     temp = document.getElementById("left-span");
+//                     temp.textContent = guessLeft;
+//
+//                     temp = document.getElementById("used-span");
+//                     temp.textContent = userGuess;
+//
+//                     temp = document.getElementById("comp-choice-span");
+//                     temp.textContent = computerGuess;
+//
+// }
 
                     /*
                                      var html = "<p>Press r, p or s to start playing!</p>" +
