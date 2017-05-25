@@ -43,6 +43,10 @@ document.onkeyup = function(event) {
         guessLeft--
         console.log("guesses left " + guessLeft)
         //push to guessSoFar
+
+                        //userGuess.push(guessSoFar[ ]);
+                        //push.userGuess = guessSoFar [];
+                       // guessSoFar.push(event.key);
     }
 
 
